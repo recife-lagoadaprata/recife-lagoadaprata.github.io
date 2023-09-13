@@ -97,7 +97,7 @@
      <div class="btn-wrapper">
         <button class="btn btn-primary btn-lg" onclick="playAudio()" id="playButton">
           <i class="bi bi-droplet"></i> 
-          <span data-i18n="playButtonText"></span>
+          <span id="playButtonText" data-i18n="playButtonText"></span>
         </button>
       </div>
 
@@ -166,8 +166,12 @@
   </footer>
 
   <script>
+    document.getElementById("audio").style.display = 'none';
+
+    var currLang = 'pt-br';
     // Função para trocar o idioma do texto
     function changeLanguage(lang) {
+      currLang = lang;
       const elements = document.querySelectorAll('[data-i18n]');
       elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
@@ -177,9 +181,23 @@
       });
     }
 
+    var isPlaying = false;
+
     function playAudio() {
       const audio = document.getElementById("audio");
-      audio.play();
+      const playButton  = document.getElementById("playButton");
+      const playButtonText  = document.getElementById("playButtonText");
+      
+      if (!isPlaying) {  
+        audio.play();
+        playButtonText.textContent = translations[currLang]['playingButtonText'];
+      }else{
+        audio.pause();
+        audio.currentTime = 0;
+        playButtonText.textContent = translations[currLang]['playButtonText'];
+      }
+
+      isPlaying = !isPlaying;
     }
 
     // Tradução dos textos
@@ -187,6 +205,7 @@
       'pt-br': {
         'header': 'Ejetar Água de Celular e Caixa de Som',
         'playButtonText': 'Clique para Tocar Áudio',
+        'playingButtonText': 'Áudio tocando',
         'intro': 'Se você acidentalmente expôs seu celular ou caixa de som à água, é essencial agir rapidamente para minimizar os danos. Abaixo estão algumas dicas e cuidados importantes para ejetar água de diferentes dispositivos:',
         'eject_cell': 'Como Ejetar Água de Celular',
         'eject_cell_tip1': 'Desligue o celular imediatamente para evitar curtos-circuitos e danos permanentes.',
@@ -210,6 +229,7 @@
       'en': {
         'header': 'Ejecting Water from Cell Phones and Speaker Boxes',
         'playButtonText': 'Click to Play Audio',
+        'playingButtonText': 'Audio is playing',
         'intro': 'If you accidentally exposed your cell phone or speaker box to water, it is essential to act quickly to minimize damage. Below are some important tips and precautions for ejecting water from different devices:',
         'eject_cell': 'How to Eject Water from Cell Phones',
         'eject_cell_tip1': 'Turn off the cell phone immediately to avoid short circuits and permanent damage.',
@@ -233,7 +253,7 @@
     };
 
     // Tradução inicial para o idioma padrão (pt-br)
-    changeLanguage('pt-br');
+    changeLanguage(currLang);
   </script>
 
 </body>
