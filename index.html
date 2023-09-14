@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-07Y9QF5V4B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-07Y9QF5V4B');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejetar Água de Celular e Caixa de Som | Dicas e Cuidados</title>
+  <meta name="description"
+    content="Ccomo ejetar água do celular e caixa de som, smartphone, iphone, samsung. Dicas e cuidados para proteger seus dispositivos após exposição à água.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #070c11;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .audio-control {
+      margin: 20px auto;
+      display: block;
+    }
+
+    .text {
+      font-size: 16px;
+      margin: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .text {
+        font-size: 14px;
+      }
+    }
+
+    .ad {
+      background-color: #eee;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .ad {
+        font-size: 12px;
+      }
+    }
+
+    footer {
+      background-color: #0c0e0f;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .btn-wrapper {
+      text-align: center;
+    }
+
+    .btn-lg {
+      font-size: 24px;
+      padding: 15px 30px;
+    }
+
+    .img-centralizada {
+      width: 512px;
+      height: 512px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 data-i18n="header"></h1>
+  </header>
+
+  <div class="container">
+
+    <div class="btn-wrapper">
+      <button class="btn btn-primary btn-lg" onclick="playAudio()" id="playButton">
+        <i class="bi bi-droplet"></i>
+        <span data-i18n="playButtonText"></span>
+      </button>
+    </div>
+
+    <div class="text-center">
+      <h1></h1>
+      <audio id="audio" controls>
+        <source src="eject-water.mp3" type="audio/mpeg">
+        Seu navegador não suporta a reprodução de áudio.
+      </audio>
+    </div>
+
+    <div class="text">
+      <h2 data-i18n="header"></h2>
+      <p data-i18n="intro"></p>
+
+      <!-- Adicionar Anúncio aqui -->
+      <div class="ad">
+        Anúncio
+      </div>
+
+      <div class="row">
+        <div class="col-12 text-center">
+          <img id="imageShower" src="shower.jpeg" class="img-centralizada" alt="Chuveiro com vapor">
+        </div>
+      </div>
+
+      <h3 data-i18n="eject_cell"></h3>
+      <ul>
+        <li data-i18n="eject_cell_tip1"></li>
+        <li data-i18n="eject_cell_tip2"></li>
+        <li data-i18n="eject_cell_tip3"></li>
+        <li data-i18n="eject_cell_tip4"></li>
+        <li data-i18n="eject_cell_tip5"></li>
+        <li data-i18n="eject_cell_tip6"></li>
+      </ul>
+
+      <h3 data-i18n="eject"></h3>
+      <ul>
+        <li data-i18n="eject_tip1"></li>
+        <li data-i18n="eject_tip2"></li>
+        <li data-i18n="eject_tip3"></li>
+        <li data-i18n="eject_tip4"></li>
+      </ul>
+
+      <h3 data-i18n="eject_speaker"></h3>
+      <ul>
+        <li data-i18n="eject_speaker_tip1"></li>
+        <li data-i18n="eject_speaker_tip2"></li>
+        <li data-i18n="eject_speaker_tip3"></li>
+        <li data-i18n="eject_speaker_tip4"></li>
+        <li data-i18n="eject_speaker_tip5"></li>
+      </ul>
+
+      <!-- Adicionar Anúncio aqui -->
+      <div class="ad">
+        Anúncio
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>Language | Idioma:
+      <a href="javascript:void(0);" onclick="changeLanguage('pt-br')">Português</a> | <a href="javascript:void(0);"
+        onclick="changeLanguage('en')">English</a>
+    </p>
+  </footer>
+
+  <script>
+    // Função para trocar o idioma do texto
+    function changeLanguage(lang) {
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+    }
+
+    function playAudio() {
+      const audio = document.getElementById("audio");
+      audio.play();
+    }
+
+    // Tradução dos textos
+    const translations = {
+      'pt-br': {
+        'header': 'Ejetar Água de Celular e Caixa de Som',
+        'playButtonText': 'Clique para Tocar Áudio',
+        'intro': 'Se você acidentalmente expôs seu celular ou caixa de som à água, é essencial agir rapidamente para minimizar os danos. Abaixo estão algumas dicas e cuidados importantes para ejetar água de diferentes dispositivos:',
+        'eject_cell': 'Como Ejetar Água de Celular',
+        'eject_cell_tip1': 'Desligue o celular imediatamente para evitar curtos-circuitos e danos permanentes.',
+        'eject_cell_tip2': 'Remova qualquer capa protetora e película do celular para permitir a secagem completa.',
+        'eject_cell_tip3': 'Seque delicadamente a parte externa do celular com um pano limpo e macio.',
+        'eject_cell_tip4': 'Utilize o método de absorção para retirar a água interna. Coloque o celular em um recipiente com arroz ou sílica gel por pelo menos 24 horas.',
+        'eject_cell_tip5': 'Não use calor excessivo, como secadores de cabelo, pois isso pode danificar os componentes internos.',
+        'eject_cell_tip6': 'Após a secagem completa, ligue o celular e verifique se tudo está funcionando corretamente.',
+        'eject': 'Como Ejetar Água de Smartphone',
+        'eject_tip1': 'Siga as etapas gerais de ejeção de água mencionadas acima, que são aplicáveis a Smartphones.',
+        'eject_tip2': 'Os Smartphones mais recentes geralmente possuem resistência à água, mas não são completamente à prova d\'água. Evite expô-los a água por longos períodos e a profundidades maiores que a classificação de resistência do fabricante.',
+        'eject_tip3': 'Os aparelhos com certificação IP68 são resistentes à água, mas é importante lembrar que essa resistência pode diminuir com o tempo. Evite submergir ou expor esses dispositivos a água salgada.',
+        'eject_tip4': 'Se seu Smartphone estiver com água presa nos alto-falantes, aguarde a secagem natural ou utilize uma pequena quantidade de ar comprimido para ajudar na ejeção da água.',
+        'eject_speaker': 'Cuidados',
+        'eject_speaker_tip1': 'Para caixas de som Bluetooth portáteis, verifique se o dispositivo possui classificação de resistência à água antes de expô-lo à água.',
+        'eject_speaker_tip2': 'Caso a caixa de som não seja resistente à água, evite expô-la a líquidos ou ambientes úmidos.',
+        'eject_speaker_tip3': 'Se acidentalmente entrar água na caixa de som, desligue-a imediatamente e siga as etapas gerais de ejeção de água para retirar o líquido.',
+        'eject_speaker_tip4': 'Não utilize a caixa de som enquanto ela estiver molhada, pois isso pode prejudicar a qualidade do som e causar danos permanentes.',
+        'eject_speaker_tip5': 'Deixe a caixa de som secar completamente antes de ligá-la novamente para evitar falhas no funcionamento ou curtos-circuitos.'
+      },
+      'en': {
+        'header': 'Ejecting Water from Cell Phones and Speaker Boxes',
+        'playButtonText': 'Click to Play Audio',
+        'intro': 'If you accidentally exposed your cell phone or speaker box to water, it is essential to act quickly to minimize damage. Below are some important tips and precautions for ejecting water from different devices:',
+        'eject_cell': 'How to Eject Water from Cell Phones',
+        'eject_cell_tip1': 'Turn off the cell phone immediately to avoid short circuits and permanent damage.',
+        'eject_cell_tip2': 'Remove any protective cover and film from the cell phone to allow complete drying.',
+        'eject_cell_tip3': 'Gently dry the external part of the cell phone with a clean and soft cloth.',
+        'eject_cell_tip4': 'Use the absorption method to remove the internal water. Place the cell phone in a container with rice or silica gel for at least 24 hours.',
+        'eject_cell_tip5': 'Do not use excessive heat, such as hair dryers, as it can damage the internal components.',
+        'eject_cell_tip6': 'After complete drying, turn on the cell phone and check if everything is working properly.',
+        'eject': 'How to Eject Water from Smartphones',
+        'eject_tip1': 'Follow the general steps for ejecting water mentioned above, which apply to Smartphones.',
+        'eject_tip2': 'Recent Smartphones usually have water resistance, but they are not completely waterproof. Avoid exposing them to water for long periods and to depths greater than the manufacturer\'s resistance rating.',
+        'eject_tip3': 'Devices with IP68 certification are water-resistant, but it is important to remember that this resistance may decrease over time. Avoid submerging or exposing these devices to saltwater.',
+        'eject_tip4': 'If your Smartphone has water trapped in the speakers, wait for natural drying or use a small amount of compressed air to help eject the water.',
+        'eject_speaker': 'Precautions',
+        'eject_speaker_tip1': 'For portable Bluetooth speaker boxes, check if the device has a water resistance rating before exposing it to water.',
+        'eject_speaker_tip2': 'If the speaker box is not water-resistant, avoid exposing it to liquids or humid environments.',
+        'eject_speaker_tip3': 'If water accidentally enters the speaker box, turn it off immediately and follow the general steps for ejecting water to remove the liquid.',
+        'eject_speaker_tip4': 'Do not use the speaker box while it is wet, as it can damage the sound quality and cause permanent damage.',
+        'eject_speaker_tip5': 'Allow the speaker box to dry completely before turning it on again to avoid malfunctions or short circuits.'
+      }
+    };
+
+    // Tradução inicial para o idioma padrão (pt-br)
+    changeLanguage('pt-br');
+  </script>
+
+</body>
+
+</html>
